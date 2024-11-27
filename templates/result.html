@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Resultado de la EVALUACIÓN</title>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Resultado de la EvalUción</h1>
+        </header>
+
+        <section class="result-section">
+            <!-- Texto original -->
+            <div class="result-item">
+                <h2>Tu texto Original</h2>
+                <p>{{ transcription }}</p>
+            </div>
+            
+            <!-- Texto traducido al español -->
+            <div class="result-item">
+                <h2>Tu texto Traducido al Español</h2>
+                <p>{{ translated_text['spanish'] }}</p>
+            </div>
+
+            <!-- Texto traducido al inglés -->
+            <div class="result-item">
+                <h2>Tu texto mejorado en Inglés</h2>
+                <p>{{ translated_text['english'] }}</p>
+            </div>
+
+            <!-- Porcentaje de diferencia y Cambios encontrados -->
+            <div class="result-item">
+                <h2>Porcentaje de Diferencia</h2>
+                <p><strong>{{ change_percentage }}%</strong></p>
+                <p>
+                    <!-- Imprimir el texto limpio y concatenado en una sola línea -->
+                    {{ changes }}
+                </p>
+            </div>
+
+            <!-- Fluidez del discurso -->
+            <div class="result-item">
+                <h2>Fluidez del Discurso</h2>
+                <p><strong>{{ fluency }}</strong></p>
+            </div>
+        </section>
+
+<!-- Mostrar la fluidez -->
+
+        <footer>
+            <a href="/">Volver al inicio</a>
+        </footer>
+    </div>
+</body>
+</html>

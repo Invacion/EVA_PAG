@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Sube tu Archivo de Audio</title>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Transcripción de Audio</h1>
+            <p>Sube un archivo de audio para transcribirlo y obtener los resultados.</p>
+        </header>
+
+        <section class="upload-section">
+            <form action="/upload" method="post" enctype="multipart/form-data" class="upload-form">
+                <label for="file" class="upload-label">Selecciona tu archivo de audio:</label>
+                <input type="file" name="file" accept="audio/*" required class="upload-input">
+                <button type="submit" class="upload-btn">Subir y Transcribir</button>
+            </form>
+        </section>
+
+        <footer>
+            <p>&copy; 2024 Transcripción de Audio</p>
+        </footer>
+    </div>
+</body>
+</html>
