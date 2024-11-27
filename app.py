@@ -299,5 +299,4 @@ def add_question_marks(text):
     
     return text
 
-if __name__ == '__main__':
-    app.run(debug=True)
+
